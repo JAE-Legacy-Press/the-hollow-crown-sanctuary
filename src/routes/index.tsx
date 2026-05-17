@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Four books. Four immortal fae courts. One throne that has been hollow for eight hundred years. The Bone Trials is Book One.",
+          "Four immortal fae courts. One throne that has been hollow for eight hundred years. The Bone Trials is Book One.",
       },
     ],
   }),
