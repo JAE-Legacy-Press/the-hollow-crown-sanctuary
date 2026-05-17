@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Four books. Four immortal fae courts. One throne that has been hollow for eight hundred years. The Bone Trials is Book One.",
+          "Four immortal fae courts. One throne that has been hollow for eight hundred years. The Bone Trials is Book One.",
       },
     ],
   }),
@@ -26,7 +26,7 @@ function Index() {
 
       {/* Hero */}
       <section className="container-wide pt-16 pb-28 md:pt-28 md:pb-40 text-center">
-        <p className="eyebrow mb-10">A series of four books</p>
+        <p className="eyebrow mb-10">A series by Edward Crewe</p>
         <h1 className="display text-5xl md:text-7xl lg:text-[5.5rem] mb-10 max-w-4xl mx-auto">
           The Hollow Crown
         </h1>
@@ -102,9 +102,9 @@ function Index() {
             <h2 className="display text-4xl md:text-5xl mb-8">The Wife of War</h2>
             <hr className="rule mb-8" />
             <p>
-              The Bone Court has a new queen. The Tide Court has a question its
-              library cannot answer. And the prince who was sent to the marsh to
-              be forgotten has not stayed.
+              The Hollow throne is no longer empty. The Tide Court has a
+              question its library cannot answer. And the prince who was sent
+              to the marsh to be forgotten has not stayed.
             </p>
             <p>
               The second book of The Hollow Crown follows Mira beyond the
