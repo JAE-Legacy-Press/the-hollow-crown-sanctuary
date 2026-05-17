@@ -142,6 +142,14 @@ function Index() {
             </dd>
           </div>
           <div>
+            <dt className="display text-2xl mb-3">The Hollow Court</dt>
+            <dd>
+              Has no king. Has no queen. Has no throne but the four
+              pillar-trunks at the cardinal points of a dead clearing. Has been
+              waiting eight hundred years for a wild mortal who can fill it.
+            </dd>
+          </div>
+          <div>
             <dt className="display text-2xl mb-3">The Marsh</dt>
             <dd>
               Beyond the four courts lies a marsh where exiled fae are sent to
