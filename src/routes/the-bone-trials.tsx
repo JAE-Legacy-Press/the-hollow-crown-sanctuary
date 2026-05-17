@@ -5,21 +5,69 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Newsletter } from "@/components/Newsletter";
 import { Ornament } from "@/components/Ornament";
 
+const TITLE = "The Bone Trials — Book One of The Hollow Crown";
+const DESC =
+  "Book One of The Hollow Crown. A contest no mortal has ever survived. A prince ordered to kill her. A court afraid of what she is.";
+const URL = "https://hollow-crown.com/the-bone-trials";
+const OG_IMAGE = "https://hollow-crown.com/og-book-one.jpg";
+
+const BOOK_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: "The Bone Trials",
+  alternateName: "The Bone Trials: Book One of The Hollow Crown",
+  bookFormat: "https://schema.org/EBook",
+  inLanguage: "en",
+  image: OG_IMAGE,
+  url: URL,
+  author: {
+    "@type": "Person",
+    name: "Edward Crewe",
+    url: "https://hollow-crown.com/about",
+  },
+  publisher: { "@type": "Organization", name: "JAE Legacy Press" },
+  description: DESC,
+  isPartOf: {
+    "@type": "BookSeries",
+    name: "The Hollow Crown",
+    url: "https://hollow-crown.com/",
+  },
+  workExample: {
+    "@type": "Book",
+    "@id": "https://www.amazon.com/dp/B0GYMK2WTG",
+    bookFormat: "https://schema.org/EBook",
+    isbn: "",
+    potentialAction: {
+      "@type": "ReadAction",
+      target: "https://www.amazon.com/dp/B0GYMK2WTG",
+    },
+  },
+};
+
 export const Route = createFileRoute("/the-bone-trials")({
   component: BoneTrials,
   head: () => ({
     meta: [
-      { title: "The Bone Trials — Book One of The Hollow Crown" },
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:type", content: "book" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:url", content: URL },
+      { property: "og:image", content: OG_IMAGE },
       {
-        name: "description",
-        content:
-          "Book One of The Hollow Crown. A contest no mortal has ever survived. A prince ordered to kill her. A court afraid of what she is.",
+        property: "og:image:alt",
+        content: "Cover of The Bone Trials — Book One of The Hollow Crown",
       },
-      { property: "og:title", content: "The Bone Trials — Book One of The Hollow Crown" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESC },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    links: [{ rel: "canonical", href: URL }],
+    scripts: [
       {
-        property: "og:description",
-        content:
-          "A contest no mortal has ever survived. A prince ordered to kill her. A court afraid of what she is.",
+        type: "application/ld+json",
+        children: JSON.stringify(BOOK_JSONLD),
       },
     ],
   }),

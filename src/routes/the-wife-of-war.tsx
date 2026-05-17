@@ -4,21 +4,60 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Newsletter } from "@/components/Newsletter";
 
+const TITLE = "The Wife of War — Book Two of The Hollow Crown";
+const DESC =
+  "Book Two of The Hollow Crown. The Hollow throne is no longer empty. The Tide Court has a question its library cannot answer.";
+const URL = "https://hollow-crown.com/the-wife-of-war";
+const OG_IMAGE = "https://hollow-crown.com/og-book-two.jpg";
+
+const BOOK_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: "The Wife of War",
+  alternateName: "The Wife of War: Book Two of The Hollow Crown",
+  bookFormat: "https://schema.org/EBook",
+  inLanguage: "en",
+  image: OG_IMAGE,
+  url: URL,
+  author: {
+    "@type": "Person",
+    name: "Edward Crewe",
+    url: "https://hollow-crown.com/about",
+  },
+  publisher: { "@type": "Organization", name: "JAE Legacy Press" },
+  description: DESC,
+  datePublished: "2026-05",
+  isPartOf: {
+    "@type": "BookSeries",
+    name: "The Hollow Crown",
+    url: "https://hollow-crown.com/",
+  },
+};
+
 export const Route = createFileRoute("/the-wife-of-war")({
   component: WifeOfWar,
   head: () => ({
     meta: [
-      { title: "The Wife of War — Book Two of The Hollow Crown" },
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:type", content: "book" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:url", content: URL },
+      { property: "og:image", content: OG_IMAGE },
       {
-        name: "description",
-        content:
-          "Book Two of The Hollow Crown. The Hollow throne is no longer empty. The Tide Court has a question its library cannot answer.",
+        property: "og:image:alt",
+        content: "Cover of The Wife of War — Book Two of The Hollow Crown",
       },
-      { property: "og:title", content: "The Wife of War — Book Two of The Hollow Crown" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESC },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    links: [{ rel: "canonical", href: URL }],
+    scripts: [
       {
-        property: "og:description",
-        content:
-          "Book Two of The Hollow Crown. The Hollow throne is no longer empty. The Tide Court has a question its library cannot answer.",
+        type: "application/ld+json",
+        children: JSON.stringify(BOOK_JSONLD),
       },
     ],
   }),

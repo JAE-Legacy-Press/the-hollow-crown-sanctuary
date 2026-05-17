@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="The Hollow Crown">
+  <rect width="32" height="32" fill="#1a261c"/>
+  <path
+    d="M 5.5 23 L 9.5 11 L 13 18 L 16 7 L 19 18 L 22.5 11 L 26.5 23 Z"
+    fill="none"
+    stroke="#c08550"
+    stroke-width="2"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+  <circle cx="9.5" cy="9.5" r="1" fill="#c08550"/>
+  <circle cx="16" cy="5.5" r="1" fill="#c08550"/>
+  <circle cx="22.5" cy="9.5" r="1" fill="#c08550"/>
+</svg>

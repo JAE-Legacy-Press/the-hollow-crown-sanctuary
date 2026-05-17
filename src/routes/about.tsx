@@ -4,15 +4,49 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Newsletter } from "@/components/Newsletter";
 import { Ornament } from "@/components/Ornament";
 
+const URL = "https://hollow-crown.com/about";
+const TITLE = "About — Edward Crewe & The Hollow Crown";
+const DESC =
+  "Edward Crewe writes literary fantasy. The Hollow Crown is his first series — set in a dying empire of four immortal fae courts.";
+
+const PERSON_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Edward Crewe",
+  url: URL,
+  jobTitle: "Author",
+  description: DESC,
+  knowsLanguage: "en",
+  publishedWork: [
+    {
+      "@type": "Book",
+      name: "The Bone Trials",
+      url: "https://hollow-crown.com/the-bone-trials",
+    },
+    {
+      "@type": "Book",
+      name: "The Wife of War",
+      url: "https://hollow-crown.com/the-wife-of-war",
+    },
+  ],
+};
+
 export const Route = createFileRoute("/about")({
   component: About,
   head: () => ({
     meta: [
-      { title: "About — Edward Crewe & The Hollow Crown" },
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:type", content: "profile" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:url", content: URL },
+    ],
+    links: [{ rel: "canonical", href: URL }],
+    scripts: [
       {
-        name: "description",
-        content:
-          "Edward Crewe writes literary fantasy. The Hollow Crown is his first series — set in a dying empire of four immortal fae courts.",
+        type: "application/ld+json",
+        children: JSON.stringify(PERSON_JSONLD),
       },
     ],
   }),

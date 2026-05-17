@@ -1,2 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /vesserath
+Disallow: /api/
+
+Sitemap: https://hollow-crown.com/sitemap.xml

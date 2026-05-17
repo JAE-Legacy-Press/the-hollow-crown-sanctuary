@@ -7,6 +7,45 @@ import { Newsletter } from "@/components/Newsletter";
 import { Ornament } from "@/components/Ornament";
 import { CourtSigil } from "@/components/CourtSigil";
 
+const HOME_JSONLD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "The Hollow Crown",
+    url: "https://hollow-crown.com/",
+    inLanguage: "en",
+    publisher: { "@type": "Organization", name: "JAE Legacy Press" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BookSeries",
+    name: "The Hollow Crown",
+    url: "https://hollow-crown.com/",
+    author: {
+      "@type": "Person",
+      name: "Edward Crewe",
+      url: "https://hollow-crown.com/about",
+    },
+    publisher: { "@type": "Organization", name: "JAE Legacy Press" },
+    description:
+      "A literary fantasy series. Four immortal fae courts have waited eight hundred years for a fifth throne to be filled.",
+    hasPart: [
+      {
+        "@type": "Book",
+        name: "The Bone Trials",
+        url: "https://hollow-crown.com/the-bone-trials",
+        position: 1,
+      },
+      {
+        "@type": "Book",
+        name: "The Wife of War",
+        url: "https://hollow-crown.com/the-wife-of-war",
+        position: 2,
+      },
+    ],
+  },
+];
+
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
@@ -16,6 +55,13 @@ export const Route = createFileRoute("/")({
         name: "description",
         content:
           "Four immortal fae courts. One throne that has been hollow for eight hundred years. The Bone Trials is Book One.",
+      },
+    ],
+    links: [{ rel: "canonical", href: "https://hollow-crown.com/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(HOME_JSONLD),
       },
     ],
   }),

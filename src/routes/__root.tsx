@@ -72,6 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "theme-color", content: "#1a261c" },
       { title: "The Hollow Crown — a series by Edward Crewe" },
       {
         name: "description",
@@ -79,16 +80,36 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "The Hollow Crown is a literary fantasy series by Edward Crewe. Book One, The Bone Trials, is out now. Book Two, The Wife of War, follows.",
       },
       { name: "author", content: "Edward Crewe" },
+      { property: "og:site_name", content: "The Hollow Crown" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: "The Hollow Crown — a series by Edward Crewe" },
       {
         property: "og:description",
         content:
           "Four immortal fae courts. One throne that has been hollow for eight hundred years.",
       },
-      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://hollow-crown.com/" },
+      { property: "og:image", content: "https://hollow-crown.com/og-book-one.jpg" },
+      {
+        property: "og:image:alt",
+        content: "Cover of The Bone Trials — Book One of The Hollow Crown",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "The Hollow Crown — a series by Edward Crewe" },
+      {
+        name: "twitter:description",
+        content:
+          "Four immortal fae courts. One throne that has been hollow for eight hundred years.",
+      },
+      { name: "twitter:image", content: "https://hollow-crown.com/og-book-one.jpg" },
     ],
     links: [
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
