@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Ornament } from "@/components/Ornament";
+import { useSubscribe } from "@/hooks/useSubscribe";
 
 export const Route = createFileRoute("/vesserath")({
   component: Vesserath,
@@ -26,8 +26,7 @@ export const Route = createFileRoute("/vesserath")({
 });
 
 function Vesserath() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const { email, setEmail, status, errorMessage, submit } = useSubscribe("vesserath");
 
   return (
     <main>
@@ -57,7 +56,7 @@ function Vesserath() {
           <p className="eyebrow pt-4">— Edward Crewe</p>
         </div>
 
-        {submitted ? (
+        {status === "success" ? (
           <p className="eyebrow text-[color:var(--color-ember)] text-center">
             Thank you. The letters are on their way.
           </p>
@@ -65,7 +64,7 @@ function Vesserath() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              if (email.trim()) setSubmitted(true);
+              submit();
             }}
             className="mx-auto max-w-md"
           >
@@ -80,12 +79,22 @@ function Vesserath() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@somewhere.com"
               className="field mb-8"
+              disabled={status === "submitting"}
             />
             <div className="text-center">
-              <button type="submit" className="btn btn-ember">
-                Send me the letters
+              <button
+                type="submit"
+                className="btn btn-ember"
+                disabled={status === "submitting"}
+              >
+                {status === "submitting" ? "Sending…" : "Send me the letters"}
               </button>
             </div>
+            {status === "error" && errorMessage && (
+              <p className="text-sm text-[color:var(--color-ember)] text-center mt-6">
+                {errorMessage}
+              </p>
+            )}
             <p className="text-sm text-muted-foreground text-center mt-8">
               A short PDF, free, sent immediately. The list is small and
               quiet — used only when there is news of the next book.

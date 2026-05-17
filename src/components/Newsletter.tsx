@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { Ornament } from "./Ornament";
+import { useSubscribe } from "@/hooks/useSubscribe";
 
 export function Newsletter() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const { email, setEmail, status, errorMessage, submit } = useSubscribe("homepage");
 
   return (
     <section className="container-prose py-24 md:py-32">
@@ -29,7 +28,7 @@ export function Newsletter() {
         </p>
       </div>
 
-      {submitted ? (
+      {status === "success" ? (
         <p className="eyebrow text-[color:var(--color-ember)] text-center">
           Thank you. The letters are on their way.
         </p>
@@ -37,7 +36,7 @@ export function Newsletter() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            if (email.trim()) setSubmitted(true);
+            submit();
           }}
           className="mx-auto max-w-md"
         >
@@ -52,12 +51,22 @@ export function Newsletter() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@somewhere.com"
             className="field mb-8"
+            disabled={status === "submitting"}
           />
           <div className="text-center">
-            <button type="submit" className="btn btn-ember">
-              Send me the letters
+            <button
+              type="submit"
+              className="btn btn-ember"
+              disabled={status === "submitting"}
+            >
+              {status === "submitting" ? "Sending…" : "Send me the letters"}
             </button>
           </div>
+          {status === "error" && errorMessage && (
+            <p className="text-sm text-[color:var(--color-ember)] text-center mt-6">
+              {errorMessage}
+            </p>
+          )}
           <p className="text-sm text-muted-foreground text-center mt-8">
             A short PDF, free, sent immediately. The list is small and quiet —
             used only when there is news of the next book.
