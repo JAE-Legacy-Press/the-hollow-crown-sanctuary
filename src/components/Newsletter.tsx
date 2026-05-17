@@ -5,19 +5,31 @@ export function Newsletter() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section className="container-prose py-24 md:py-32 text-center">
-      <p className="eyebrow mb-6">Letters from the Marsh</p>
-      <h2 className="display text-3xl md:text-4xl mb-6">
-        Word, when the next book is finished.
+    <section className="container-prose py-24 md:py-32">
+      <p className="eyebrow mb-6 text-center">A Free Companion</p>
+      <h2 className="display text-3xl md:text-4xl mb-10 text-center">
+        Letters from Vesserath
       </h2>
-      <p className="text-muted-foreground mb-10">
-        One short letter for each new book — never more. No marketing, no follow-ups,
-        no second list. You can leave at any time.
-      </p>
+      <hr className="rule mx-auto mb-12" />
+
+      <div className="max-w-xl mx-auto space-y-6 mb-14">
+        <p>
+          The year Mira spent learning to be queen, her sister was at Vesserath,
+          growing up.
+        </p>
+        <p>
+          Wren wrote to her often. Three of those letters survive.
+        </p>
+        <p>
+          They are not in this book or the next. They are a small thing on their
+          own — twelve years old in the first letter, fifteen by the last, the
+          three-squeeze code closing each one a little differently.
+        </p>
+      </div>
 
       {submitted ? (
-        <p className="eyebrow text-[color:var(--color-ember)]">
-          Thank you. You will hear from me.
+        <p className="eyebrow text-[color:var(--color-ember)] text-center">
+          Thank you. The letters are on their way.
         </p>
       ) : (
         <form
@@ -25,7 +37,7 @@ export function Newsletter() {
             e.preventDefault();
             if (email.trim()) setSubmitted(true);
           }}
-          className="mx-auto max-w-md text-left"
+          className="mx-auto max-w-md"
         >
           <label htmlFor="nl-email" className="label">
             Email
@@ -41,9 +53,13 @@ export function Newsletter() {
           />
           <div className="text-center">
             <button type="submit" className="btn btn-ember">
-              Subscribe
+              Send me the letters
             </button>
           </div>
+          <p className="text-sm text-muted-foreground text-center mt-8">
+            A short PDF, free, sent immediately. The list is small and quiet —
+            used only when there is news of the next book.
+          </p>
         </form>
       )}
     </section>
