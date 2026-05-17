@@ -37,14 +37,14 @@ function WifeOfWar() {
               alt="The Wife of War"
               width={1024}
               height={1536}
-              className="mx-auto block w-full max-w-sm md:max-w-none shadow-[0_30px_60px_-30px_rgba(0,0,0,0.7)]"
+              className="book-cover mx-auto max-w-sm md:max-w-none"
             />
           </div>
           <div className="md:col-span-7 md:order-1">
             <p className="eyebrow mb-6">Book Two · The Hollow Crown</p>
             <h1 className="display text-4xl md:text-6xl mb-8">The Wife of War</h1>
             <hr className="rule mb-10" />
-            <p>
+            <p className="dropcap">
               The Hollow throne is no longer empty. The Tide Court has a
               question its library cannot answer. And the prince who was sent
               to the marsh to be forgotten has not stayed.

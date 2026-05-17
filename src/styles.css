@@ -100,13 +100,26 @@
   }
 
   body {
-    background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-serif);
     font-weight: 400;
     /* Book-like rhythm: generous leading */
     line-height: 1.85;
     font-size: 1.0625rem;
+    /* Atmospheric depth: faint ember warmth top + bottom on the deep-forest field */
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(
+        ellipse 80% 50% at 50% 0%,
+        color-mix(in oklab, var(--color-ember) 4%, transparent),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 80% 50% at 50% 100%,
+        color-mix(in oklab, var(--color-ember) 3%, transparent),
+        transparent 55%
+      );
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -220,5 +233,86 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: color-mix(in oklab, var(--color-foreground) 65%, transparent);
+  }
+
+  /* Illuminated drop cap — first letter of an opening paragraph */
+  .dropcap::first-letter {
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-weight: 500;
+    float: left;
+    font-size: 4.2rem;
+    line-height: 0.86;
+    margin: 0.36rem 0.55rem -0.05rem 0;
+    color: var(--color-ember);
+    font-feature-settings: "kern", "liga", "swsh", "salt";
+  }
+
+  /* Ornamental section divider: hairline — triple dot glyph — hairline.
+     Used in place of the plain .rule wherever a section break wants weight. */
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    color: color-mix(in oklab, var(--color-foreground) 55%, transparent);
+    margin-inline: auto;
+  }
+  .ornament::before,
+  .ornament::after {
+    content: "";
+    flex: 0 0 4rem;
+    height: 1px;
+    background: color-mix(in oklab, var(--color-foreground) 28%, transparent);
+  }
+  .ornament svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: var(--color-ember);
+    opacity: 0.85;
+  }
+
+  /* Pull quote — oversized italic display, ember rule beneath. */
+  .pullquote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: color-mix(in oklab, var(--color-foreground) 95%, transparent);
+  }
+  .pullquote::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 1px;
+    background: var(--color-ember);
+    margin: 1.75rem auto 0;
+  }
+
+  /* Court sigil mark — small monoline SVG, ember-tinted */
+  .sigil {
+    width: 2.75rem;
+    height: 2.75rem;
+    color: var(--color-ember);
+    opacity: 0.9;
+    stroke-width: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Book object — subtle perspective so the cover sits like a real book,
+     plus a warm ember rim that picks up the hollow inside the pillars. */
+  .book-cover {
+    display: block;
+    width: 100%;
+    transform: perspective(1600px) rotateY(-1.5deg);
+    transform-origin: left center;
+    box-shadow:
+      -1px 0 0 color-mix(in oklab, #000 60%, transparent),
+      0 30px 60px -28px rgba(0, 0, 0, 0.75),
+      0 0 80px -20px color-mix(in oklab, var(--color-ember) 22%, transparent);
   }
 }

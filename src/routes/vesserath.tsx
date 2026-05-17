@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Ornament } from "@/components/Ornament";
 
 export const Route = createFileRoute("/vesserath")({
   component: Vesserath,
@@ -37,10 +38,10 @@ function Vesserath() {
         <h1 className="display text-4xl md:text-6xl mb-8 text-center">
           Letters from Vesserath
         </h1>
-        <hr className="rule mx-auto mb-12" />
+        <Ornament className="mb-12" />
 
         <div className="space-y-6 mb-14">
-          <p>
+          <p className="dropcap">
             You have just read what Wren became. These are the years before.
           </p>
           <p>

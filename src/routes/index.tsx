@@ -4,6 +4,8 @@ import bookTwo from "@/assets/book-two.jpg";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Newsletter } from "@/components/Newsletter";
+import { Ornament } from "@/components/Ornament";
+import { CourtSigil } from "@/components/CourtSigil";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -30,13 +32,20 @@ function Index() {
         <h1 className="display text-5xl md:text-7xl lg:text-[5.5rem] mb-10 max-w-4xl mx-auto">
           The Hollow Crown
         </h1>
-        <hr className="rule mx-auto mb-10" />
+        <Ornament className="mb-10" />
         <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
           Four immortal fae courts have waited eight hundred years for a fifth
           throne to be filled. When a wild mortal claims the hollow throne — not
           by birthright, not by conquest, but because the Heartwood recognises
           her — the forest begins, against every working, to wake.
         </p>
+      </section>
+
+      {/* Pull quote */}
+      <section className="container-prose pb-24 md:pb-32">
+        <blockquote className="pullquote text-3xl md:text-4xl">
+          She does not expect to live.
+        </blockquote>
       </section>
 
       {/* Book One */}
@@ -48,14 +57,14 @@ function Index() {
               alt="The Bone Trials — Book One of The Hollow Crown"
               width={1254}
               height={2000}
-              className="mx-auto block w-full max-w-sm md:max-w-none shadow-[0_30px_60px_-30px_rgba(0,0,0,0.7)]"
+              className="book-cover mx-auto max-w-sm md:max-w-none"
             />
           </div>
           <div className="md:col-span-6 lg:col-span-6 lg:col-start-7">
             <p className="eyebrow mb-6">Book One · Out Now</p>
             <h2 className="display text-4xl md:text-5xl mb-8">The Bone Trials</h2>
             <hr className="rule mb-8" />
-            <p>
+            <p className="dropcap">
               Mira Solenne is twenty-two years old, and her sister has been dying
               for two years, three months, and eleven days. When she is summoned
               to the fae court of Bone to compete in the Trials — a contest no
@@ -84,6 +93,10 @@ function Index() {
         </div>
       </section>
 
+      <div className="container-wide pb-28 md:pb-40">
+        <Ornament />
+      </div>
+
       {/* Book Two */}
       <section id="book-two" className="container-wide pb-28 md:pb-40">
         <div className="grid gap-14 md:grid-cols-12 md:gap-20 md:items-center">
@@ -94,14 +107,14 @@ function Index() {
               width={1024}
               height={1536}
               loading="lazy"
-              className="mx-auto block w-full max-w-sm md:max-w-none shadow-[0_30px_60px_-30px_rgba(0,0,0,0.7)]"
+              className="book-cover mx-auto max-w-sm md:max-w-none"
             />
           </div>
           <div className="md:col-span-6 lg:col-span-6 md:order-1">
             <p className="eyebrow mb-6">Book Two · May 2026</p>
             <h2 className="display text-4xl md:text-5xl mb-8">The Wife of War</h2>
             <hr className="rule mb-8" />
-            <p>
+            <p className="dropcap">
               The Hollow throne is no longer empty. The Tide Court has a
               question its library cannot answer. And the prince who was sent
               to the marsh to be forgotten has not stayed.
@@ -122,40 +135,56 @@ function Index() {
 
       {/* The Courts */}
       <section className="container-prose pb-28 md:pb-40">
-        <p className="eyebrow text-center mb-8">Five trials · Four courts · One throne</p>
-        <hr className="rule mx-auto mb-14" />
-        <dl className="space-y-12">
-          <div>
-            <dt className="display text-2xl mb-3">The Bone Court</dt>
-            <dd>
-              Keeps its dead in patterns. Halls vaulted with bone, lit by silver
-              candles, ruled by Vahrek Drazaar — who has not been challenged in
-              three hundred years.
-            </dd>
+        <p className="eyebrow text-center mb-8">
+          Five trials · Four courts · One throne
+        </p>
+        <Ornament className="mb-16" />
+        <dl className="space-y-16">
+          <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left md:gap-8">
+            <CourtSigil name="bone" className="shrink-0 mb-4 md:mb-0" />
+            <div>
+              <dt className="display text-2xl mb-3">The Bone Court</dt>
+              <dd>
+                Keeps its dead in patterns. Halls vaulted with bone, lit by
+                silver candles, ruled by Vahrek Drazaar — who has not been
+                challenged in three hundred years.
+              </dd>
+            </div>
           </div>
-          <div>
-            <dt className="display text-2xl mb-3">The Tide Court</dt>
-            <dd>
-              Keeps its knowledge underwater. Its library holds eight centuries
-              of working — every bargain made, every name spoken, every promise
-              kept or broken.
-            </dd>
+          <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left md:gap-8">
+            <CourtSigil name="tide" className="shrink-0 mb-4 md:mb-0" />
+            <div>
+              <dt className="display text-2xl mb-3">The Tide Court</dt>
+              <dd>
+                Keeps its knowledge underwater. Its library holds eight
+                centuries of working — every bargain made, every name spoken,
+                every promise kept or broken.
+              </dd>
+            </div>
           </div>
-          <div>
-            <dt className="display text-2xl mb-3">The Hollow Court</dt>
-            <dd>
-              Has no king. Has no queen. Has no throne but the four
-              pillar-trunks at the cardinal points of a dead clearing. Has been
-              waiting eight hundred years for a wild mortal who can fill it.
-            </dd>
+          <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left md:gap-8">
+            <CourtSigil name="hollow" className="shrink-0 mb-4 md:mb-0" />
+            <div>
+              <dt className="display text-2xl mb-3">The Hollow Court</dt>
+              <dd>
+                Has no king. Has no queen. Has no throne but the four
+                pillar-trunks at the cardinal points of a dead clearing. Has
+                been waiting eight hundred years for a wild mortal who can fill
+                it.
+              </dd>
+            </div>
           </div>
-          <div>
-            <dt className="display text-2xl mb-3">The Marsh</dt>
-            <dd>
-              Beyond the four courts lies a marsh where exiled fae are sent to
-              be forgotten. A place of reeds, water, and slow time. After the
-              trials, one prince is sent here. He is told to stay. He does not.
-            </dd>
+          <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left md:gap-8">
+            <CourtSigil name="marsh" className="shrink-0 mb-4 md:mb-0" />
+            <div>
+              <dt className="display text-2xl mb-3">The Marsh</dt>
+              <dd>
+                Beyond the four courts lies a marsh where exiled fae are sent
+                to be forgotten. A place of reeds, water, and slow time. After
+                the trials, one prince is sent here. He is told to stay. He
+                does not.
+              </dd>
+            </div>
           </div>
         </dl>
       </section>

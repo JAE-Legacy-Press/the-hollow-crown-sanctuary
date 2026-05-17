@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Newsletter } from "@/components/Newsletter";
+import { Ornament } from "@/components/Ornament";
 
 export const Route = createFileRoute("/about")({
   component: About,
@@ -27,8 +28,8 @@ function About() {
         <h1 className="display text-4xl md:text-5xl text-center mb-10">
           Edward Crewe
         </h1>
-        <hr className="rule mx-auto mb-14" />
-        <p>
+        <Ornament className="mb-14" />
+        <p className="dropcap">
           Edward Crewe writes literary fantasy. <em>The Bone Trials</em> is his
           first novel. He lives by the sea.
         </p>

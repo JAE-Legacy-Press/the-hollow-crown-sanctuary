@@ -3,6 +3,7 @@ import bookOne from "@/assets/book-one.jpg";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Newsletter } from "@/components/Newsletter";
+import { Ornament } from "@/components/Ornament";
 
 export const Route = createFileRoute("/the-bone-trials")({
   component: BoneTrials,
@@ -37,14 +38,14 @@ function BoneTrials() {
               alt="The Bone Trials"
               width={1254}
               height={2000}
-              className="mx-auto block w-full max-w-sm md:max-w-none shadow-[0_30px_60px_-30px_rgba(0,0,0,0.7)]"
+              className="book-cover mx-auto max-w-sm md:max-w-none"
             />
           </div>
           <div className="md:col-span-7">
             <p className="eyebrow mb-6">Book One · The Hollow Crown</p>
             <h1 className="display text-4xl md:text-6xl mb-8">The Bone Trials</h1>
             <hr className="rule mb-10" />
-            <p>
+            <p className="dropcap">
               Mira Solenne is twenty-two years old, and her sister has been
               dying for two years, three months, and eleven days. When she is
               summoned to the fae court of Bone to compete in the Trials — a
@@ -81,9 +82,9 @@ function BoneTrials() {
       </article>
 
       <section className="container-prose pb-24">
-        <hr className="rule mx-auto mb-12" />
+        <Ornament className="mb-14" />
         <p className="eyebrow text-center mb-8">Praise</p>
-        <blockquote className="display text-2xl md:text-3xl text-center leading-snug">
+        <blockquote className="pullquote text-2xl md:text-3xl">
           “She does not expect to live. She does not expect the man ordered to
           kill her. She does not expect what the fae of Bone are afraid of, when
           they look at her.”

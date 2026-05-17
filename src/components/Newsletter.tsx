@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Ornament } from "./Ornament";
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ export function Newsletter() {
       <h2 className="display text-3xl md:text-4xl mb-10 text-center">
         Letters from Vesserath
       </h2>
-      <hr className="rule mx-auto mb-12" />
+      <Ornament className="mb-12" />
 
       <div className="max-w-xl mx-auto space-y-6 mb-14">
         <p>
