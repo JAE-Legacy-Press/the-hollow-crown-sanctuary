@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Edward Crewe writes literary fantasy. The Hollow Crown is his first series — four books set in a dying empire of four immortal fae courts.",
+          "Edward Crewe writes literary fantasy. The Hollow Crown is his first series — set in a dying empire of four immortal fae courts.",
       },
     ],
   }),
