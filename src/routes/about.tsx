@@ -17,6 +17,7 @@ const PERSON_JSONLD = {
   jobTitle: "Author",
   description: DESC,
   knowsLanguage: "en",
+  sameAs: ["https://x.com/hollowcrowncom"],
   publishedWork: [
     {
       "@type": "Book",

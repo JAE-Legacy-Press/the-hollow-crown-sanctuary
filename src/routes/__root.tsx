@@ -102,6 +102,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "The Hollow Crown — a literary fantasy series by Edward Crewe. Book One, The Bone Trials, out now.",
       },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@hollowcrowncom" },
+      { name: "twitter:creator", content: "@hollowcrowncom" },
       {
         name: "twitter:title",
         content: "The Hollow Crown — A Literary Fantasy Series by Edward Crewe",

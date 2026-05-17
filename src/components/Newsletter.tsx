@@ -71,6 +71,18 @@ export function Newsletter() {
             A short PDF, free, sent immediately. The list is small and quiet —
             used only when there is news of the next book.
           </p>
+          <p className="text-sm text-muted-foreground text-center mt-3">
+            Or follow along on{" "}
+            <a
+              href="https://x.com/hollowcrowncom"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-[color:var(--color-ember)] transition-colors"
+            >
+              X @hollowcrowncom
+            </a>
+            .
+          </p>
         </form>
       )}
     </section>
