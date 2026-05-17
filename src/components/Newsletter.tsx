@@ -18,11 +18,12 @@ export function Newsletter() {
           growing up.
         </p>
         <p>
-          Wren wrote to her often. Three of those letters survive.
+          Wren wrote to her often — through the monthly rides south, through
+          the bindings, through the working. Three of those letters survive.
         </p>
         <p>
           They are not in this book or the next. They are a small thing on their
-          own — twelve years old in the first letter, fifteen by the last, the
+          own — fifteen years old in the first letter, sixteen by the last, the
           three-squeeze code closing each one a little differently.
         </p>
       </div>
