@@ -36,9 +36,9 @@ function About() {
         <h2 className="display text-2xl md:text-3xl mt-16 mb-6">The series</h2>
         <hr className="rule mb-8" />
         <p>
-          The Hollow Crown is a series of four books set in a dying empire
-          where four immortal fae courts have waited eight hundred years for a
-          fifth throne to be filled.
+          The Hollow Crown is set in a dying empire where four immortal fae
+          courts have waited eight hundred years for a fifth throne to be
+          filled.
         </p>
         <p>
           When a wild mortal claims the hollow throne — not by birthright, not
@@ -47,7 +47,7 @@ function About() {
         </p>
         <p>
           <em>The Bone Trials</em> is Book One. <em>The Wife of War</em> is
-          Book Two. Books Three and Four are in progress.
+          Book Two. More is in progress.
         </p>
       </section>
 
