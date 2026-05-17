@@ -76,14 +76,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "The Hollow Crown is a series of four literary fantasy novels by Edward Crewe. Book One, The Bone Trials, is out now. Book Two, The Wife of War, follows.",
+          "The Hollow Crown is a literary fantasy series by Edward Crewe. Book One, The Bone Trials, is out now. Book Two, The Wife of War, follows.",
       },
       { name: "author", content: "Edward Crewe" },
       { property: "og:title", content: "The Hollow Crown — a series by Edward Crewe" },
       {
         property: "og:description",
         content:
-          "Four books. Four immortal fae courts. One throne that has been hollow for eight hundred years.",
+          "Four immortal fae courts. One throne that has been hollow for eight hundred years.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
