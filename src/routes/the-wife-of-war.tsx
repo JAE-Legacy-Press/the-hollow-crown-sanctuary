@@ -12,13 +12,13 @@ export const Route = createFileRoute("/the-wife-of-war")({
       {
         name: "description",
         content:
-          "Book Two of The Hollow Crown. The Bone Court has a new queen. The Tide Court has a question its library cannot answer.",
+          "Book Two of The Hollow Crown. The Hollow throne is no longer empty. The Tide Court has a question its library cannot answer.",
       },
       { property: "og:title", content: "The Wife of War — Book Two of The Hollow Crown" },
       {
         property: "og:description",
         content:
-          "Book Two of The Hollow Crown. The Bone Court has a new queen. The Tide Court has a question its library cannot answer.",
+          "Book Two of The Hollow Crown. The Hollow throne is no longer empty. The Tide Court has a question its library cannot answer.",
       },
     ],
   }),
