@@ -73,36 +73,45 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#1a261c" },
-      { title: "The Hollow Crown — a series by Edward Crewe" },
+      { title: "The Hollow Crown — A Literary Fantasy Series by Edward Crewe" },
       {
         name: "description",
         content:
-          "The Hollow Crown is a literary fantasy series by Edward Crewe. Book One, The Bone Trials, is out now. Book Two, The Wife of War, follows.",
+          "A literary fantasy series by Edward Crewe. Four immortal fae courts have waited eight hundred years for a fifth throne to be filled.",
       },
       { name: "author", content: "Edward Crewe" },
       { property: "og:site_name", content: "The Hollow Crown" },
       { property: "og:locale", content: "en_US" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "The Hollow Crown — a series by Edward Crewe" },
+      {
+        property: "og:title",
+        content: "The Hollow Crown — A Literary Fantasy Series by Edward Crewe",
+      },
       {
         property: "og:description",
         content:
-          "Four immortal fae courts. One throne that has been hollow for eight hundred years.",
+          "A literary fantasy series by Edward Crewe. Four immortal fae courts have waited eight hundred years for a fifth throne to be filled.",
       },
       { property: "og:url", content: "https://hollow-crown.com/" },
-      { property: "og:image", content: "https://hollow-crown.com/og-book-one.jpg" },
+      { property: "og:image", content: "https://hollow-crown.com/og-home.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
-        content: "Cover of The Bone Trials — Book One of The Hollow Crown",
+        content:
+          "The Hollow Crown — a literary fantasy series by Edward Crewe. Book One, The Bone Trials, out now.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "The Hollow Crown — a series by Edward Crewe" },
+      {
+        name: "twitter:title",
+        content: "The Hollow Crown — A Literary Fantasy Series by Edward Crewe",
+      },
       {
         name: "twitter:description",
         content:
-          "Four immortal fae courts. One throne that has been hollow for eight hundred years.",
+          "A literary fantasy series by Edward Crewe. Four immortal fae courts have waited eight hundred years for a fifth throne to be filled.",
       },
-      { name: "twitter:image", content: "https://hollow-crown.com/og-book-one.jpg" },
+      { name: "twitter:image", content: "https://hollow-crown.com/og-home.jpg" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

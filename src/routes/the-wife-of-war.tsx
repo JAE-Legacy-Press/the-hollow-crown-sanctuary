@@ -4,9 +4,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Newsletter } from "@/components/Newsletter";
 
-const TITLE = "The Wife of War — Book Two of The Hollow Crown";
+const TITLE = "The Wife of War — The Hollow Crown, Book Two by Edward Crewe";
 const DESC =
-  "Book Two of The Hollow Crown. The Hollow throne is no longer empty. The Tide Court has a question its library cannot answer.";
+  "Book Two of The Hollow Crown, by Edward Crewe. The Hollow throne is no longer empty. The Tide Court has a question its library cannot answer.";
 const URL = "https://hollow-crown.com/the-wife-of-war";
 const OG_IMAGE = "https://hollow-crown.com/og-book-two.jpg";
 
@@ -45,6 +45,8 @@ export const Route = createFileRoute("/the-wife-of-war")({
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
       { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
         content: "Cover of The Wife of War — Book Two of The Hollow Crown",
@@ -73,9 +75,9 @@ function WifeOfWar() {
           <div className="md:col-span-5 md:order-2">
             <img
               src={bookTwo}
-              alt="The Wife of War"
-              width={1024}
-              height={1536}
+              alt="The Wife of War — Book Two of The Hollow Crown"
+              width={1600}
+              height={2560}
               className="book-cover mx-auto max-w-sm md:max-w-none"
             />
           </div>

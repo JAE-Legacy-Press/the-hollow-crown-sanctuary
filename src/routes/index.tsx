@@ -50,11 +50,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "The Hollow Crown — Edward Crewe" },
+      { title: "The Hollow Crown — A Literary Fantasy Series by Edward Crewe" },
       {
         name: "description",
         content:
-          "Four immortal fae courts. One throne that has been hollow for eight hundred years. The Bone Trials is Book One.",
+          "Four immortal fae courts. One throne that has been hollow for eight hundred years. The Bone Trials is Book One. Read it now.",
       },
     ],
     links: [{ rel: "canonical", href: "https://hollow-crown.com/" }],
@@ -101,8 +101,8 @@ function Index() {
             <img
               src={bookOne}
               alt="The Bone Trials — Book One of The Hollow Crown"
-              width={1254}
-              height={2000}
+              width={1410}
+              height={2250}
               className="book-cover mx-auto max-w-sm md:max-w-none"
             />
           </div>
@@ -150,8 +150,8 @@ function Index() {
             <img
               src={bookTwo}
               alt="The Wife of War — Book Two of The Hollow Crown"
-              width={1024}
-              height={1536}
+              width={1600}
+              height={2560}
               loading="lazy"
               className="book-cover mx-auto max-w-sm md:max-w-none"
             />

@@ -5,7 +5,7 @@ import { Newsletter } from "@/components/Newsletter";
 import { Ornament } from "@/components/Ornament";
 
 const URL = "https://hollow-crown.com/about";
-const TITLE = "About — Edward Crewe & The Hollow Crown";
+const TITLE = "About Edward Crewe — Author of The Hollow Crown Series";
 const DESC =
   "Edward Crewe writes literary fantasy. The Hollow Crown is his first series — set in a dying empire of four immortal fae courts.";
 

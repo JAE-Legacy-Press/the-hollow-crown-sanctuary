@@ -8,28 +8,28 @@ export const Route = createFileRoute("/vesserath")({
   component: Vesserath,
   head: () => ({
     meta: [
-      { title: "Letters from Vesserath — The Hollow Crown" },
+      { title: "Letters from Vesserath — A Free Companion to The Hollow Crown" },
       {
         name: "description",
         content:
           "Three surviving letters from Wren Solenne to her sister, written between the trials and the war. A short PDF, free, from Edward Crewe.",
       },
       { name: "robots", content: "noindex, nofollow" },
-      { property: "og:title", content: "Letters from Vesserath — The Hollow Crown" },
+      { property: "og:title", content: "Letters from Vesserath — A Free Companion to The Hollow Crown" },
       {
         property: "og:description",
         content:
           "Three surviving letters from Wren Solenne to her sister, written between the trials and the war. A short PDF, free.",
       },
       { property: "og:url", content: "https://hollow-crown.com/vesserath" },
-      { property: "og:image", content: "https://hollow-crown.com/og-book-one.jpg" },
-      { name: "twitter:title", content: "Letters from Vesserath — The Hollow Crown" },
+      { property: "og:image", content: "https://hollow-crown.com/og-home.jpg" },
+      { name: "twitter:title", content: "Letters from Vesserath — A Free Companion to The Hollow Crown" },
       {
         name: "twitter:description",
         content:
           "Three surviving letters from Wren Solenne to her sister, written between the trials and the war. A short PDF, free.",
       },
-      { name: "twitter:image", content: "https://hollow-crown.com/og-book-one.jpg" },
+      { name: "twitter:image", content: "https://hollow-crown.com/og-home.jpg" },
     ],
   }),
 });

@@ -5,9 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Newsletter } from "@/components/Newsletter";
 import { Ornament } from "@/components/Ornament";
 
-const TITLE = "The Bone Trials — Book One of The Hollow Crown";
+const TITLE = "The Bone Trials — The Hollow Crown, Book One by Edward Crewe";
 const DESC =
-  "Book One of The Hollow Crown. A contest no mortal has ever survived. A prince ordered to kill her. A court afraid of what she is.";
+  "Book One of The Hollow Crown, by Edward Crewe. A contest no mortal has ever survived. A prince ordered to kill her. A court afraid of what she is.";
 const URL = "https://hollow-crown.com/the-bone-trials";
 const OG_IMAGE = "https://hollow-crown.com/og-book-one.jpg";
 
@@ -55,6 +55,8 @@ export const Route = createFileRoute("/the-bone-trials")({
       { property: "og:description", content: DESC },
       { property: "og:url", content: URL },
       { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
         content: "Cover of The Bone Trials — Book One of The Hollow Crown",
@@ -83,9 +85,9 @@ function BoneTrials() {
           <div className="md:col-span-5">
             <img
               src={bookOne}
-              alt="The Bone Trials"
-              width={1254}
-              height={2000}
+              alt="The Bone Trials — Book One of The Hollow Crown"
+              width={1410}
+              height={2250}
               className="book-cover mx-auto max-w-sm md:max-w-none"
             />
           </div>
