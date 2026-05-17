@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VesserathRouteImport } from './routes/vesserath'
 import { Route as TheWifeOfWarRouteImport } from './routes/the-wife-of-war'
 import { Route as TheBoneTrialsRouteImport } from './routes/the-bone-trials'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VesserathRoute = VesserathRouteImport.update({
+  id: '/vesserath',
+  path: '/vesserath',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TheWifeOfWarRoute = TheWifeOfWarRouteImport.update({
   id: '/the-wife-of-war',
   path: '/the-wife-of-war',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/the-bone-trials': typeof TheBoneTrialsRoute
   '/the-wife-of-war': typeof TheWifeOfWarRoute
+  '/vesserath': typeof VesserathRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/the-bone-trials': typeof TheBoneTrialsRoute
   '/the-wife-of-war': typeof TheWifeOfWarRoute
+  '/vesserath': typeof VesserathRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,6 +70,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/the-bone-trials': typeof TheBoneTrialsRoute
   '/the-wife-of-war': typeof TheWifeOfWarRoute
+  '/vesserath': typeof VesserathRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -71,8 +80,15 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/the-bone-trials'
     | '/the-wife-of-war'
+    | '/vesserath'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/sitemap.xml' | '/the-bone-trials' | '/the-wife-of-war'
+  to:
+    | '/'
+    | '/about'
+    | '/sitemap.xml'
+    | '/the-bone-trials'
+    | '/the-wife-of-war'
+    | '/vesserath'
   id:
     | '__root__'
     | '/'
@@ -80,6 +96,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/the-bone-trials'
     | '/the-wife-of-war'
+    | '/vesserath'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -88,10 +105,18 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TheBoneTrialsRoute: typeof TheBoneTrialsRoute
   TheWifeOfWarRoute: typeof TheWifeOfWarRoute
+  VesserathRoute: typeof VesserathRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vesserath': {
+      id: '/vesserath'
+      path: '/vesserath'
+      fullPath: '/vesserath'
+      preLoaderRoute: typeof VesserathRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/the-wife-of-war': {
       id: '/the-wife-of-war'
       path: '/the-wife-of-war'
@@ -136,7 +161,18 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TheBoneTrialsRoute: TheBoneTrialsRoute,
   TheWifeOfWarRoute: TheWifeOfWarRoute,
+  VesserathRoute: VesserathRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
