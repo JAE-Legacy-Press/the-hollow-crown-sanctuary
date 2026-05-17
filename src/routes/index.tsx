@@ -26,7 +26,7 @@ function Index() {
 
       {/* Hero */}
       <section className="container-wide pt-16 pb-28 md:pt-28 md:pb-40 text-center">
-        <p className="eyebrow mb-10">A series of four books</p>
+        <p className="eyebrow mb-10">A series by Edward Crewe</p>
         <h1 className="display text-5xl md:text-7xl lg:text-[5.5rem] mb-10 max-w-4xl mx-auto">
           The Hollow Crown
         </h1>
