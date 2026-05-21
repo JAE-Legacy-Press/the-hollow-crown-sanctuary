@@ -32,6 +32,15 @@ const BOOK_JSONLD = {
     name: "The Hollow Crown",
     url: "https://hollow-crown.com/",
   },
+  workExample: {
+    "@type": "Book",
+    "@id": "https://www.amazon.com/dp/B0H25JHLJG",
+    bookFormat: "https://schema.org/EBook",
+    potentialAction: {
+      "@type": "ReadAction",
+      target: "https://www.amazon.com/dp/B0H25JHLJG",
+    },
+  },
 };
 
 export const Route = createFileRoute("/the-wife-of-war")({
@@ -99,6 +108,14 @@ function WifeOfWar() {
             <p className="eyebrow mt-12">Published May 2026</p>
 
             <div className="flex flex-wrap gap-4 mt-8">
+              <a
+                href="https://www.amazon.com/dp/B0H25JHLJG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ember"
+              >
+                Buy on Amazon
+              </a>
               <Link to="/" className="btn">
                 Back to the series
               </Link>

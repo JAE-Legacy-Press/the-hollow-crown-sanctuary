@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import bookOne from "@/assets/book-one.jpg";
 import bookTwo from "@/assets/book-two.jpg";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -131,9 +131,6 @@ function Index() {
               >
                 Buy on Amazon
               </a>
-              <Link to="/the-bone-trials" className="btn">
-                Read more
-              </Link>
             </div>
           </div>
         </div>
@@ -171,9 +168,14 @@ function Index() {
               learning not to fight.
             </p>
             <div className="flex flex-wrap gap-4 mt-10">
-              <Link to="/the-wife-of-war" className="btn">
-                Read more
-              </Link>
+              <a
+                href="https://www.amazon.com/dp/B0H25JHLJG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ember"
+              >
+                Buy on Amazon
+              </a>
             </div>
           </div>
         </div>
