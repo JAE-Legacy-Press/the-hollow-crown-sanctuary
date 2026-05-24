@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import bookOne from "@/assets/book-one.jpg";
 import bookTwo from "@/assets/book-two.jpg";
+import bookThree from "@/assets/book-three.jpg";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Newsletter } from "@/components/Newsletter";
@@ -41,6 +42,12 @@ const HOME_JSONLD = [
         name: "The Wife of War",
         url: "https://hollow-crown.com/the-wife-of-war",
         position: 2,
+      },
+      {
+        "@type": "Book",
+        name: "The Glass Dunes",
+        url: "https://hollow-crown.com/the-glass-dunes",
+        position: 3,
       },
     ],
   },
@@ -170,6 +177,52 @@ function Index() {
             <div className="flex flex-wrap gap-4 mt-10">
               <a
                 href="https://www.amazon.com/dp/B0H25JHLJG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ember"
+              >
+                Buy on Amazon
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="container-wide pb-28 md:pb-40">
+        <Ornament />
+      </div>
+
+      {/* Book Three */}
+      <section id="book-three" className="container-wide pb-28 md:pb-40">
+        <div className="grid gap-14 md:grid-cols-12 md:gap-20 md:items-center">
+          <div className="md:col-span-6 lg:col-span-5">
+            <img
+              src={bookThree}
+              alt="The Glass Dunes — Book Three of The Hollow Crown"
+              width={1600}
+              height={2560}
+              loading="lazy"
+              className="book-cover mx-auto max-w-sm md:max-w-none"
+            />
+          </div>
+          <div className="md:col-span-6 lg:col-span-6 lg:col-start-7">
+            <p className="eyebrow mb-6">Book Three · May 2026</p>
+            <h2 className="display text-4xl md:text-5xl mb-8">The Glass Dunes</h2>
+            <hr className="rule mb-8" />
+            <p className="dropcap">
+              The war was averted. The four-court compact has been redrawn.
+              The empire that slept for eight hundred years has begun, slowly,
+              to wake.
+            </p>
+            <p>
+              A spymaster who had not kissed anyone in eighteen years. An
+              Ash-court general going home to a house at the edge of the
+              dunes. The year between the re-negotiation and the birth of
+              Mira's first daughter.
+            </p>
+            <div className="flex flex-wrap gap-4 mt-10">
+              <a
+                href="https://www.amazon.com/Glass-Dunes-Hollow-Crown-ebook/dp/B0H2696LWT"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-ember"

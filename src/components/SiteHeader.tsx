@@ -14,6 +14,9 @@ export function SiteHeader() {
           <Link to="/the-wife-of-war" activeProps={{ style: { color: "var(--color-ember)" } }}>
             Book Two
           </Link>
+          <Link to="/the-glass-dunes" activeProps={{ style: { color: "var(--color-ember)" } }}>
+            Book Three
+          </Link>
           <Link to="/about" activeProps={{ style: { color: "var(--color-ember)" } }}>
             About
           </Link>

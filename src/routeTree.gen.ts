@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VesserathRouteImport } from './routes/vesserath'
 import { Route as TheWifeOfWarRouteImport } from './routes/the-wife-of-war'
+import { Route as TheGlassDunesRouteImport } from './routes/the-glass-dunes'
 import { Route as TheBoneTrialsRouteImport } from './routes/the-bone-trials'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as AboutRouteImport } from './routes/about'
@@ -24,6 +25,11 @@ const VesserathRoute = VesserathRouteImport.update({
 const TheWifeOfWarRoute = TheWifeOfWarRouteImport.update({
   id: '/the-wife-of-war',
   path: '/the-wife-of-war',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TheGlassDunesRoute = TheGlassDunesRouteImport.update({
+  id: '/the-glass-dunes',
+  path: '/the-glass-dunes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TheBoneTrialsRoute = TheBoneTrialsRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/the-bone-trials': typeof TheBoneTrialsRoute
+  '/the-glass-dunes': typeof TheGlassDunesRoute
   '/the-wife-of-war': typeof TheWifeOfWarRoute
   '/vesserath': typeof VesserathRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/the-bone-trials': typeof TheBoneTrialsRoute
+  '/the-glass-dunes': typeof TheGlassDunesRoute
   '/the-wife-of-war': typeof TheWifeOfWarRoute
   '/vesserath': typeof VesserathRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/the-bone-trials': typeof TheBoneTrialsRoute
+  '/the-glass-dunes': typeof TheGlassDunesRoute
   '/the-wife-of-war': typeof TheWifeOfWarRoute
   '/vesserath': typeof VesserathRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/sitemap.xml'
     | '/the-bone-trials'
+    | '/the-glass-dunes'
     | '/the-wife-of-war'
     | '/vesserath'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/sitemap.xml'
     | '/the-bone-trials'
+    | '/the-glass-dunes'
     | '/the-wife-of-war'
     | '/vesserath'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/sitemap.xml'
     | '/the-bone-trials'
+    | '/the-glass-dunes'
     | '/the-wife-of-war'
     | '/vesserath'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TheBoneTrialsRoute: typeof TheBoneTrialsRoute
+  TheGlassDunesRoute: typeof TheGlassDunesRoute
   TheWifeOfWarRoute: typeof TheWifeOfWarRoute
   VesserathRoute: typeof VesserathRoute
 }
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/the-wife-of-war'
       fullPath: '/the-wife-of-war'
       preLoaderRoute: typeof TheWifeOfWarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/the-glass-dunes': {
+      id: '/the-glass-dunes'
+      path: '/the-glass-dunes'
+      fullPath: '/the-glass-dunes'
+      preLoaderRoute: typeof TheGlassDunesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/the-bone-trials': {
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TheBoneTrialsRoute: TheBoneTrialsRoute,
+  TheGlassDunesRoute: TheGlassDunesRoute,
   TheWifeOfWarRoute: TheWifeOfWarRoute,
   VesserathRoute: VesserathRoute,
 }

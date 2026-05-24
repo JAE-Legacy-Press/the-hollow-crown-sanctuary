@@ -125,6 +125,16 @@ annotate_card "public/og-book-two.jpg" \
   "The Wife of War" \
   "The Hollow throne is no longer empty. The" \
   "Tide Court has a question its library can't answer." \
-  "PUBLISHED MAY 2026  ››"
+  "READ IT NOW — ON AMAZON  ››"
+
+# --- Book Three card ---------------------------------------------------------
+echo "→ og-book-three.jpg"
+build_base "src/assets/book-three.jpg" "public/og-book-three.jpg"
+annotate_card "public/og-book-three.jpg" \
+  "BOOK THREE · THE HOLLOW CROWN" \
+  "The Glass Dunes" \
+  "The war is over. The compact is redrawn." \
+  "A house at the edge of the dunes. A quiet year." \
+  "READ IT NOW — ON AMAZON  ››"
 
 echo "✓ OG cards written to public/og-*.jpg"
